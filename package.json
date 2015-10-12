@@ -1,0 +1,21 @@
+{
+  "name": "laksa-klaxon",
+  "version": "0.0.1",
+  "description": "It's time to stop missing Chicken Laksa soup at Eat in Manchester!",
+  "keywords": [
+    "laksa",
+    "soup",
+    "manchester"
+  ],
+  "author": "Martin Rue",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^1.6.0"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "bin": {
+    "laksa-klaxon": "laksa-klaxon.js"
+  }
+}
