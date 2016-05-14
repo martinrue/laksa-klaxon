@@ -2,16 +2,16 @@
 
 'use strict';
 
-const http = require('http');
+const https = require('https');
 const util = require('util');
 
 const locations = {
   manchester: {
-    'Cross Street': 'http://eat.co.uk/store-locations/cross-street',
-    'St Anns Street': 'http://eat.co.uk/store-locations/st-anns-street',
-    'Arndale (Unit 54B)': 'http://eat.co.uk/store-locations/arndale-2',
-    'Arndale (Unit R1)': 'http://eat.co.uk/store-locations/arndale',
-    'Trafford Centre': 'http://eat.co.uk/store-locations/trafford-centre'
+    'Cross Street': 'https://eat.co.uk/store-locations/cross-street',
+    'St Anns Street': 'https://eat.co.uk/store-locations/st-anns-street',
+    'Arndale (Unit 54B)': 'https://eat.co.uk/store-locations/arndale-2',
+    'Arndale (Unit R1)': 'https://eat.co.uk/store-locations/arndale',
+    'Trafford Centre': 'https://eat.co.uk/store-locations/trafford-centre'
   }
 };
 
@@ -22,7 +22,7 @@ const text = {
 };
 
 const get = (url, callback) => {
-  const request = http.get(url, response => {
+  const request = https.get(url, response => {
     let data = '';
     response.on('data', chunk => data += chunk);
     response.on('end', () => callback(null, data));
