@@ -4,6 +4,7 @@
 
 const https = require('https');
 const util = require('util');
+const cheerio = require('cheerio');
 
 const locations = {
   manchester: {
@@ -31,7 +32,7 @@ const get = (url, callback) => {
   request.on('error', callback);
 };
 
-const hasLaksa = data => data.toLowerCase().indexOf('chicken laksa') !== -1;
+const hasLaksa = dom => dom('a[href*="chicken-laksa"]').length > 0;
 
 const checkCity = city => {
   const key = city.toLowerCase();
@@ -43,8 +44,9 @@ const checkCity = city => {
       if (err) {
         return console.error(`error querying: ${text.blue(place)}`);
       }
+      const dom = cheerio.load(data);
 
-      const result = hasLaksa(data) ? text.green('<KLAXON> There\'s laksa') : text.red('No laksa');
+      const result = hasLaksa(dom) ? text.green('<KLAXON> There\'s laksa') : text.red('No laksa');
       console.log(`${result} at ${text.blue(place)}`);
     });
   });

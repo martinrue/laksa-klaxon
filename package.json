@@ -17,5 +17,8 @@
   },
   "bin": {
     "laksa-klaxon": "laksa-klaxon.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0"
   }
 }
