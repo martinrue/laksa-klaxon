@@ -7,11 +7,12 @@
     "soup",
     "manchester"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinrue/laksa-klaxon.git"
+  },
   "author": "Martin Rue",
   "license": "ISC",
-  "devDependencies": {
-    "eslint": "^1.6.0"
-  },
   "engines": {
     "node": ">= 4.0.0"
   },
@@ -19,6 +20,6 @@
     "laksa-klaxon": "laksa-klaxon.js"
   },
   "dependencies": {
-    "cheerio": "^0.20.0"
+    "laksa-klaxon-core": "^1.0.1"
   }
 }
